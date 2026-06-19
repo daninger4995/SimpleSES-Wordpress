@@ -1,0 +1,26 @@
+# Build artifacts
+/_build/
+/build/
+*.zip
+
+# Dependencies (this plugin ships none, but guard against accidental commits)
+/vendor/
+/node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Editor / IDE / tooling
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
