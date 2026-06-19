@@ -18,15 +18,15 @@ delete_transient( 'simple_ses_notice' );
 
 // Multisite: clean up on every site.
 if ( is_multisite() ) {
-	$site_ids = get_sites(
+	$simple_ses_site_ids = get_sites(
 		array(
 			'fields' => 'ids',
 			'number' => 0,
 		)
 	);
 
-	foreach ( $site_ids as $site_id ) {
-		switch_to_blog( $site_id );
+	foreach ( $simple_ses_site_ids as $simple_ses_site_id ) {
+		switch_to_blog( $simple_ses_site_id );
 		delete_option( 'simple_ses' );
 		delete_transient( 'simple_ses_notice' );
 		restore_current_blog();

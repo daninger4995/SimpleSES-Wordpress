@@ -600,8 +600,8 @@ final class SimpleSES {
 		// Password: only overwrite when a new value is submitted.
 		$password = $existing['password'];
 		if ( isset( $_POST['password'] ) && '' !== $_POST['password'] ) {
-			// Do not sanitize_text_field the password — it could strip valid characters.
-			$password = trim( wp_unslash( $_POST['password'] ) );
+			// Amazon SES SMTP passwords are base64 characters, so sanitize_text_field is safe here.
+			$password = sanitize_text_field( wp_unslash( $_POST['password'] ) );
 		}
 
 		$settings = array(
