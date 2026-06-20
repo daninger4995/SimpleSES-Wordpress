@@ -27,12 +27,12 @@ define( 'SIMPLE_SES_OPTION', 'simple_ses' );
  *
  * @since 1.0.0
  */
-final class SimpleSES {
+final class Simple_SES_Plugin {
 
 	/**
 	 * Singleton instance.
 	 *
-	 * @var SimpleSES|null
+	 * @var Simple_SES_Plugin|null
 	 */
 	private static $instance = null;
 
@@ -101,7 +101,7 @@ final class SimpleSES {
 	/**
 	 * Get the singleton instance and register hooks.
 	 *
-	 * @return SimpleSES
+	 * @return Simple_SES_Plugin
 	 */
 	public static function instance() {
 
@@ -697,16 +697,16 @@ final class SimpleSES {
 	}
 }
 
-register_activation_hook( __FILE__, array( 'SimpleSES', 'activate' ) );
+register_activation_hook( __FILE__, array( 'Simple_SES_Plugin', 'activate' ) );
 
 /**
  * Boot the plugin.
  *
- * @return SimpleSES
+ * @return Simple_SES_Plugin
  */
 function simple_ses() {
 
-	return SimpleSES::instance();
+	return Simple_SES_Plugin::instance();
 }
 
 simple_ses();
